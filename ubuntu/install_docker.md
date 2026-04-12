@@ -1,11 +1,8 @@
 # Install Docker on Ubuntu
 
-Official docs:
-- <https://docs.docker.com/engine/install/ubuntu/>
-- <https://docs.docker.com/engine/security/rootless/>
 
 Related guides:
-- [Create a new user](./new_user.md)
+- 
 
 ## Rootful
 
@@ -45,8 +42,10 @@ sudo apt-get install -y uidmap dbus-user-session
 
 sudo systemctl disable --now docker.service docker.socket
 sudo rm -f /var/run/docker.sock
+```
 
-# create a dedicated user: ./new_user.md
+[Create a new user](./new_user.md)
+```bash
 sudo loginctl enable-linger [rootless_user]
 exit
 ```

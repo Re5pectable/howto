@@ -1,8 +1,5 @@
 # Creating a new user
 
-Related guides:
-- [Install Docker](./install_docker.md)
-
 ## With password
 
 ```bash
