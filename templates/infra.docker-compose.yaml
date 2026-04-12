@@ -1,0 +1,36 @@
+services:
+    redis:
+        container_name: redis
+        image: redis:8.6
+        command: redis-server --requirepass oX1FAdCLKkGNMkV2yuPk
+        ports:
+            - 127.0.0.1:6379:6379
+        volumes:
+            - v_redis:/data
+
+    postgres:
+        container_name: postgres
+        image: postgres:17
+        ports:
+            - 127.0.0.1:5432:5432
+        environment:
+            - POSTGRES_USER=btfsn_dev_db
+            - POSTGRES_PASSWORD=FtCbRXL6bJBZeQchHr43
+            - POSTGRES_DB=btfsn_dev_db_admin
+        volumes:
+            - v_postgres:/var/lib/postgresql/data
+
+    nats:
+        container_name: nats
+        image: nats:2.12
+        command: ["-js", "-m", "8222"]
+        ports:
+            - 127.0.0.1:4222:4222
+            - 127.0.0.1:8222:8222
+        volumes:
+            - v_nats:/data
+
+volumes:
+    v_postgres:
+    v_redis:
+    v_nats:
