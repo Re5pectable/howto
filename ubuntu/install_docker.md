@@ -1,14 +1,9 @@
-# Install Docker on Ubuntu
-
-
-Related guides:
-- 
+# Install Docker on Ubuntu 
 
 ## Rootful
 
 ```bash
-sudo apt-get update -y
-sudo apt-get upgrade -y
+sudo apt-get update -y && sudo apt-get upgrade -y
 
 sudo apt-get remove -y docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc
 
